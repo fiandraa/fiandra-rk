@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Fiandra Rizky Kurniawan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .profile-ring { border: 4px solid rgba(255, 255, 255, 0.3); }
+        .image-overlay {
+            background: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .image-container:hover .image-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold text-blue-700">FRK.</span>
+            <div class="space-x-6 hidden md:block">
+                <a href="#home" class="hover:text-blue-600 transition">Beranda</a>
+                <a href="#about" class="hover:text-blue-600 transition">Tentang</a>
+                <a href="#education" class="hover:text-blue-600 transition">Pendidikan</a>
+                <a href="#achievements" class="hover:text-blue-600 transition">Prestasi</a>
+            </div>
+            <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <!-- Bagian Foto Profil Utama dengan Tombol Ganti -->
+            <div class="relative inline-block mb-6 group">
+                <div class="image-container w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden profile-ring shadow-2xl mx-auto bg-gray-200 relative">
+                    <img id="mainProfileImg" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop" 
+                         alt="Foto Profil Fiandra Rizky Kurniawan" 
+                         class="w-full h-full object-cover">
+                    
+                    <!-- Tombol Ganti Foto (Overlay) -->
+                    <label for="uploadMain" class="image-overlay absolute inset-0 flex items-center justify-center cursor-pointer">
+                        <i class="fa-solid fa-camera text-2xl text-white"></i>
+                        <input type="file" id="uploadMain" class="hidden" accept="image/*" onchange="previewImage(this, 'mainProfileImg')">
+                    </label>
+                </div>
+                <div class="absolute bottom-1 right-3 bg-green-500 w-5 h-5 rounded-full border-2 border-white"></div>
+                <p class="text-xs mt-2 opacity-70 italic">Klik foto untuk ganti</p>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Fiandra Rizky Kurniawan</h1>
+            <p class="text-xl opacity-90 mb-8">Pelajar di SMA Negeri 1 Magetan | Atlet Voli | Penggemar Olahraga</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#about" class="bg-white text-blue-700 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-md">Lihat Profil</a>
+                <a href="#contact" class="border border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white/10 transition">Hubungi Saya</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bio Section -->
+    <section id="about" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Tentang Saya</h2>
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="space-y-4">
+                    <p class="text-lg leading-relaxed">
+                        Halo! Saya adalah anak ke-1 dari 2 bersaudara. Saat ini saya berusia 18 tahun dan sedang menempuh pendidikan di <span class="font-semibold text-blue-600">SMA Negeri 1 Magetan</span>.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Saya tinggal di Jl. Hasanudin RT01 RW05 Selosari, Magetan. Hobi utama saya adalah <span class="font-semibold italic">olahraga</span>, terutama bola voli yang telah menjadi bagian besar dalam perjalanan sekolah saya.
+                    </p>
+                    <div class="flex space-x-4 pt-4 text-blue-600">
+                        <div class="flex flex-col items-center p-3 bg-blue-50 rounded-xl w-24">
+                            <span class="text-2xl font-bold">18</span>
+                            <span class="text-xs">Tahun</span>
+                        </div>
+                        <div class="flex flex-col items-center p-3 bg-blue-50 rounded-xl w-24">
+                            <i class="fa-solid fa-volleyball text-2xl"></i>
+                            <span class="text-xs">Hobi</span>
+                        </div>
+                        <div class="flex flex-col items-center p-3 bg-blue-50 rounded-xl w-24">
+                            <i class="fa-solid fa-map-location-dot text-2xl"></i>
+                            <span class="text-xs">Magetan</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Foto Tambahan dengan Tombol Ganti -->
+                <div class="relative group">
+                    <div class="bg-blue-600 absolute -inset-2 rounded-3xl rotate-3 opacity-20"></div>
+                    <div class="image-container bg-gray-200 rounded-3xl overflow-hidden shadow-xl aspect-square relative z-10">
+                        <img id="secondaryImg" src="https://images.unsplash.com/photo-1592656670411-b911c007137a?q=80&w=800&auto=format&fit=crop" 
+                             alt="Fiandra di Sekolah" 
+                             class="object-cover h-full w-full">
+                        
+                        <label for="uploadSecondary" class="image-overlay absolute inset-0 flex flex-col items-center justify-center cursor-pointer text-white">
+                            <i class="fa-solid fa-image text-3xl mb-2"></i>
+                            <span class="font-semibold">Ganti Foto</span>
+                            <input type="file" id="uploadSecondary" class="hidden" accept="image/*" onchange="previewImage(this, 'secondaryImg')">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Timeline -->
+    <section id="education" class="py-20 px-4 bg-gray-100">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-800">Perjalanan Pendidikan</h2>
+            <div class="space-y-8">
+                <!-- PAUD & TK -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center z-10 shrink-0">1</div>
+                        <div class="w-1 h-full bg-blue-200"></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm flex-1 mb-4 hover:shadow-md transition">
+                        <h3 class="font-bold text-xl mb-1 text-blue-600">Masa Awal Pendidikan</h3>
+                        <p class="text-gray-600 text-sm mb-2">PAUD Marsudisiwi (2 Tahun) & TK Aisyah 7</p>
+                        <p class="text-gray-700">Memulai langkah pertama di PAUD dan melanjutkan ke TK Aisyah 7, di mana saya pernah menjuarai lomba berhitung.</p>
+                    </div>
+                </div>
+
+                <!-- MIN -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center z-10 shrink-0">2</div>
+                        <div class="w-1 h-full bg-blue-200"></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm flex-1 mb-4 hover:shadow-md transition">
+                        <h3 class="font-bold text-xl mb-1 text-blue-600">MIN 3 Magetan</h3>
+                        <p class="text-gray-600 text-sm mb-2">Usia 7 - 13 Tahun</p>
+                        <p class="text-gray-700">Menyelesaikan pendidikan dasar selama 6 tahun. Di masa ini saya berprestasi sebagai Polisi Cilik tingkat provinsi.</p>
+                    </div>
+                </div>
+
+                <!-- SMP -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center z-10 shrink-0">3</div>
+                        <div class="w-1 h-full bg-blue-200"></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm flex-1 mb-4 hover:shadow-md transition">
+                        <h3 class="font-bold text-xl mb-1 text-blue-600">SMP Negeri 3 Magetan</h3>
+                        <p class="text-gray-600 text-sm mb-2">Aktif di Ekstrakurikuler Voli</p>
+                        <p class="text-gray-700">Sangat aktif mengikuti event voli sekolah dan mengembangkan disiplin dalam olahraga.</p>
+                    </div>
+                </div>
+
+                <!-- SMA -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center z-10 shrink-0">4</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-blue-600 flex-1 hover:shadow-md transition">
+                        <h3 class="font-bold text-xl mb-1 text-blue-600">SMA Negeri 1 Magetan</h3>
+                        <p class="text-gray-600 text-sm mb-2">Masa Kini</p>
+                        <p class="text-gray-700">Mendapatkan banyak pengalaman seperti AKM dan terus berkompetisi di turnamen voli.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Pencapaian & Prestasi</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Juara 1 Berhitung -->
+                <div class="flex items-start p-6 bg-blue-50 rounded-2xl border border-blue-100">
+                    <div class="bg-blue-600 p-3 rounded-xl text-white mr-4">
+                        <i class="fa-solid fa-calculator text-2xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Juara 1 Lomba Berhitung</h4>
+                        <p class="text-blue-600 text-sm mb-2">Tingkat TK</p>
+                    </div>
+                </div>
+
+                <!-- Juara 3 Polisi Cilik -->
+                <div class="flex items-start p-6 bg-blue-50 rounded-2xl border border-blue-100">
+                    <div class="bg-blue-600 p-3 rounded-xl text-white mr-4">
+                        <i class="fa-solid fa-shield-halved text-2xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Juara 3 Polisi Cilik</h4>
+                        <p class="text-blue-600 text-sm mb-2">Tingkat Provinsi (SD)</p>
+                    </div>
+                </div>
+
+                <!-- Volly -->
+                <div class="flex items-start p-6 bg-blue-50 rounded-2xl border border-blue-100">
+                    <div class="bg-blue-600 p-3 rounded-xl text-white mr-4">
+                        <i class="fa-solid fa-trophy text-2xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Atlet Voli Sekolah</h4>
+                        <p class="text-blue-600 text-sm mb-2">SMP & SMA</p>
+                    </div>
+                </div>
+
+                <!-- AKM -->
+                <div class="flex items-start p-6 bg-blue-50 rounded-2xl border border-blue-100">
+                    <div class="bg-blue-600 p-3 rounded-xl text-white mr-4">
+                        <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Peserta AKM</h4>
+                        <p class="text-blue-600 text-sm mb-2">SMA Negeri 1 Magetan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-gray-900 text-white py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Alamat Saya</h2>
+            <p class="mb-8 opacity-70">Jl. Hasanudin RT01 RW05 Selosari, Magetan, Jawa Timur</p>
+            <div class="flex justify-center space-x-6 mb-10">
+                <a href="#" class="w-12 h-12 flex items-center justify-center bg-blue-600 rounded-full hover:bg-blue-700 transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="w-12 h-12 flex items-center justify-center bg-blue-600 rounded-full hover:bg-blue-700 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:email@example.com" class="w-12 h-12 flex items-center justify-center bg-blue-600 rounded-full hover:bg-blue-700 transition"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-sm opacity-50">
+                <p>&copy; 2024 Fiandra Rizky Kurniawan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fungsi untuk mengganti preview gambar saat user memilih file
+        function previewImage(input, imgId) {
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById(imgId).src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+</body>
+</html>
